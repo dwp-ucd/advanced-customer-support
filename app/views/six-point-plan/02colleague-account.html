@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/six-point-plan/check-answers" method="post">
+
+        {{ govukTextarea({
+          name: "colleagueAccount",
+          id: "colleague-account",
+          label: {
+            text: "Tell us what happened",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "eg., Tell us what the customer said and did, Tell us how you tried to help, Did you call the emerency services"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

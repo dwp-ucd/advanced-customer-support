@@ -1,18 +1,26 @@
 {% extends "layouts/main.html" %}
 
+{% from "govuk/components/breadcrumbs/macro.njk"      import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"           import govukButton %}
+{% from "govuk/components/phase-banner/macro.njk"     import govukPhaseBanner %}
+
 {% block pageTitle %}
   ACS page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
   {{ govukBreadcrumbs({
     items: [
       {
         text: "Home",
         href: "/home"
-      },
-      {
-        text: "Advanced Customer Support"
       }
     ]
   }) }}
@@ -38,7 +46,7 @@
 
       {{ govukButton({
         text: "Submit a Six Point Plan",
-        href: "#",
+        href: "/six-point-plan/01date",
         isStartButton: true
       }) }}
 

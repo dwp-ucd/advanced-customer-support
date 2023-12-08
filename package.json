@@ -8,6 +8,7 @@
     "@dwp/dwp-frontend": "^2.4.0",
     "@govuk-prototype-kit/common-templates": "1.2.2",
     "govuk-frontend": "4.7.0",
-    "govuk-prototype-kit": "13.13.2"
+    "govuk-prototype-kit": "13.13.2",
+    "jquery": "3.7.1"
   }
 }
