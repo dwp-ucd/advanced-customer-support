@@ -4,8 +4,6 @@
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-
-
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
@@ -13,10 +11,7 @@
   }) }}
 {% endblock %}
 
-
 {% block content %}
-
-
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -36,6 +31,7 @@
         padding-left: 5px;
       }
     </style>
+
     {{ govukDateInput({
       id: "incident-time",
       namePrefix: "incident-time",
@@ -62,26 +58,12 @@
         }
       ]
     }) }}
-    <div>
-      {{ govukButton({
-        text: "Continue",
-        href: "/six-point-plan/check-answers"
-      }) }}
-    </div>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "/six-point-plan/check-answers"
+    }) }}
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {% endblock %}

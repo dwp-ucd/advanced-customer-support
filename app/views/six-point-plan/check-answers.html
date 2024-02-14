@@ -12,80 +12,66 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">
-        Check your answers before sending your application
-      </h1>
-
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Date"
-            },
-            value: {
-              text: data['date']
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 1"
-                }
-              ]
-            }
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-xl">
+      Check your answers before sending your application
+    </h1>
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "When"
           },
-          {
-            key: {
-              text: "Time"
-            },
-            value: {
-              text: data['whatHappened']
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 2"
-                }
-              ]
-            }
+          value: {
+            text: data['incident-date']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Question 1"
+              }
+            ]
           }
-        ]
-      }) }}
+        },
+        {
+          key: {
+            text: "Time"
+          },
+          value: {
+            text: data['time']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Question 2"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
 
-      <h2 class="govuk-heading-m">
-        Now send your application
-      </h2>
+    <h2 class="govuk-heading-m">
+      Now send your application
+    </h2>
 
-      <p>
-        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
-      </p>
+    <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
-      <form action="/confirmation" method="post" novalidate>
-
-
-      </form>
-    
-      <div>
-        {{ govukButton({
-          text: "Accept and send",
-          href: "/six-point-plan/confirmation"
-        }) }}
-      </div>
-
-
-
-    </div>
-
-
-
-
-
-    
+    <form action="/confirmation" method="post" novalidate>
+      <!-- TBD -->
+    </form>
+  
+    {{ govukButton({
+      text: "Accept and send",
+      href: "/six-point-plan/confirmation"
+    }) }}
   </div>
+</div>
+
 {% endblock %}
