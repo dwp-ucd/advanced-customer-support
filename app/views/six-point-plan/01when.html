@@ -14,7 +14,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/six-point-plan/02what-happened" method="post">
+    <form class="form" action="/six-point-plan/02time" method="post">
       {% set dateHtml %}
         {{ govukDateInput({
           id: "incident-date",
@@ -61,7 +61,7 @@
         ],
           fieldset: {
             legend: {
-              text: "What date did the Six point Plan happen?",
+              text: "What date did the Six Point Plan happen?",
               classes: "govuk-fieldset__legend--l",
               isPageHeading: true
             }
