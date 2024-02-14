@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block beforeContent %}
+
   {{ govukPhaseBanner({
     tag: {
       text: "Alpha"
@@ -29,9 +30,11 @@
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
+
 {% endblock %}
 
 {% block content %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
@@ -57,4 +60,5 @@
     }) }}
   </div>
 </div>
+
 {% endblock %}
