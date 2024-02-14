@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <style>
+      .govuk-date-input__item {
+        font-size:20px !important;
+      }
+      #incident-time .govuk-date-input__item:first-child {
+        margin:0px;
+      }
+      #incident-time .govuk-date-input__item:last-child {
+        margin-left:10px;
+      }
+      #incident-time .govuk-date-input__item:first-child .govuk-form-group::after {
+        content: ":";
+        display: inline-block;
+        padding-left: 5px;
+      }
+    </style>
+    {{ govukDateInput({
+      id: "incident-time",
+      namePrefix: "incident-time",
+      hint: {
+        text: "Use the 24-hour clock. For example, 15:30"
+      },
+      fieldset: {
+        legend: {
+          text: "What time did the Six Point Plan happen?",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      },
+      items: [
+        {
+          classes: "govuk-input--width-2",
+          name: "Hours",
+          value: data['incident-date-day']
+        },
+        {
+          classes: "govuk-input--width-2",
+          name: "Minutes",
+            value: data['incident-date-month']
+        }
+      ]
+    }) }}
+    <div>
+      {{ govukButton({
+        text: "Continue",
+        href: "/six-point-plan/check-answers"
+      }) }}
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

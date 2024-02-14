@@ -40,7 +40,7 @@
           },
           {
             key: {
-              text: "What happened"
+              text: "Time"
             },
             value: {
               text: data['whatHappened']
@@ -68,12 +68,24 @@
 
       <form action="/confirmation" method="post" novalidate>
 
-        {{ govukButton({
-          text: "Accept and send"
-        }) }}
 
       </form>
+    
+      <div>
+        {{ govukButton({
+          text: "Accept and send",
+          href: "/six-point-plan/confirmation"
+        }) }}
+      </div>
+
+
 
     </div>
+
+
+
+
+
+    
   </div>
 {% endblock %}
