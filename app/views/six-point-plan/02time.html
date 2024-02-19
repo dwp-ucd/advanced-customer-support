@@ -1,10 +1,9 @@
 {% extends "layouts/main.html" %}
+{% extends "layouts/header-acs.html" %}
 
 {% block pageTitle %}
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
-
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -13,10 +12,7 @@
   }) }}
 {% endblock %}
 
-
 {% block content %}
-
-
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -36,52 +32,40 @@
         padding-left: 5px;
       }
     </style>
-    {{ govukDateInput({
-      id: "incident-time",
-      namePrefix: "incident-time",
-      hint: {
-        text: "Use the 24-hour clock. For example, 15:30"
-      },
-      fieldset: {
-        legend: {
-          text: "What time did the Six Point Plan happen?",
-          classes: "govuk-fieldset__legend--l",
-          isPageHeading: true
-        }
-      },
-      items: [
-        {
-          classes: "govuk-input--width-2",
-          name: "Hours",
-          value: data['incident-date-day']
+
+    <form class="form" action="/six-point-plan/check-answers" method="post">
+      {{ govukDateInput({
+        id: "incident-time",
+        namePrefix: "incident-time",
+        hint: {
+          text: "Use the 24-hour clock. For example, 15:30"
         },
-        {
-          classes: "govuk-input--width-2",
-          name: "Minutes",
-            value: data['incident-date-month']
-        }
-      ]
-    }) }}
-    <div>
-      {{ govukButton({
-        text: "Continue",
-        href: "/six-point-plan/check-answers"
+        fieldset: {
+          legend: {
+            text: "What time did the Six Point Plan happen?",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        items: [
+          {
+            classes: "govuk-input--width-2",
+            name: "Hours",
+            value: data['incident-date-day']
+          },
+          {
+            classes: "govuk-input--width-2",
+            name: "Minutes",
+              value: data['incident-date-month']
+          }
+        ]
       }) }}
-    </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {% endblock %}

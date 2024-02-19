@@ -18,128 +18,24 @@
 
       <form class="form" action="/six-point-plan/02what-happened" method="post">
 
-
-
-
-
-
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-            {% set dateHtml %}
-              {{ govukDateInput({
-                id: "incident-date",
-                namePrefix: "incident-date",
-                hint: {
-                  text: "For example, 30 11 2021"
-                },
-                items: [
-                  {
-                    classes: "govuk-input--width-2",
-                    name: "day"
-                  },
-                  {
-                    classes: "govuk-input--width-2",
-                    name: "month"
-                  },
-                  {
-                    classes: "govuk-input--width-4",
-                    name: "year"
-                  }
-                ]
-              }) }}
-            {% endset %}
-            {{ govukRadios({
-              idPrefix: "date",
-              name: "date",
-              items: [
-                {
-                  value: "today",
-                  text: "Today"
-                },
-                {
-                  value: "yesterday",
-                  text: "Yesterday"
-                },
-                {
-                  value: "other",
-                  text: "Another date",
-                  conditional: {
-                    html: dateHtml
-                  }
-                }
-              ],
-                fieldset: {
-                  legend: {
-                    text: "What date did the Six point Plan happen?",
-                    classes: "govuk-fieldset__legend--l",
-                    isPageHeading: true
-                  }
-                }
-            }) }}
-
-            <style>
-              .govuk-date-input__item {
-                font-size:20px !important;
-              }
-              #incident-time .govuk-date-input__item:first-child {
-                margin:0px;
-              }
-              #incident-time .govuk-date-input__item:last-child {
-                margin-left:10px;
-              }
-              #incident-time .govuk-date-input__item:first-child .govuk-form-group::after {
-                content: ":";
-                display: inline-block;
-                padding-left: 5px;
-              }
-            </style>
-
-
-
-
-
-
-
-
-
-
-
-        <!--{{ govukDateInput({
+        {{ govukDateInput({
           id: "date",
           namePrefix: "date",
           fieldset: {
             legend: {
-              text: "When did you use the Six Point Plan?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              text: "What date did the Six Point Plan happen?",
+              classes: "govuk-fieldset__legend--l",
+              isPageHeading: true
             }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
           }
-        }) }}-->
+        }) }}
 
-      
-
-      </form>
-
-      
-       <div>
         {{ govukButton({
           text: "Continue",
           href: "/six-point-plan/02time"
         }) }}
-      </div>
-    </div>
-  </div>
 
-
-
-
-
-
-
-
+      </form>
 
     </div>
   </div>

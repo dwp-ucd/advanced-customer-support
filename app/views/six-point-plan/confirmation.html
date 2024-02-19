@@ -1,10 +1,9 @@
 {% extends "layouts/main.html" %}
+{% extends "layouts/header-acs.html" %}
 
 {% block pageTitle %}
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
-
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -13,14 +12,11 @@
   }) }}
 {% endblock %}
 
-
 {% block content %}
-
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-
-
+    
     <div class="govuk-panel govuk-panel--confirmation">
       <h1 class="govuk-panel__title">
         Report submitted
@@ -28,58 +24,35 @@
       <div class="govuk-panel__body">
         Your reference number<br><strong>HDJ2123F</strong>
       </div>
-      </div>
-
-
-<p class="govuk-body">We've received your report, and we’ve notified your manager about it.</p>
-<h2 class="govuk-heading-m">What next</h2>
-<p class="govuk-body">
-  Please, take a welfare break, and dicuss the incident with your managr.
-</p>
-<p class="govuk-body">
-  DWP staff can access free counselling and support through
-  <a class="govuk-link" href="https://intranet.dwp.gov.uk/section/working-dwp/human-resources/wellbeing/employee-assistance-programme">PAM Assist</a>.
-</p>
-<h2 class="govuk-heading-m">What you can do</h2>
-<p class="govuk-body">
-
-  If you need to give us more information, or change anything in your report, please, contact your line manager.
-</p>
-{{ govukWarningText({
-  text: "Make a note of your reference number before you close this tab, or print or save this page.",
-  iconFallbackText: "Warning"
-}) }}
-<p class="govuk-body">
-  To help us improve this service, we’d like to know
-  <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=6fbxllcQF0GsKIDN_ob4w-oDsqWqlSlJvQe6JubotYpUNFoxRVFURzIyVU1QOVo3QTA5WFdWSjJIVS4u" class="govuk-link" rel="noreferrer noopener" target="_blank">what you think of it.</a><br>
-  It will only take 2 minutes to give us feedback.
-</p>
-</div>
-</div>
-
-
     </div>
 
+    <div class="submission-information">
+      <p class="govuk-body">We've received your report, and we’ve notified your manager about it.</p>
+      <h2 class="govuk-heading-m">What next</h2>
+      <p class="govuk-body">
+        Please, take a welfare break, and dicuss the incident with your managr.
+      </p>
+      <p class="govuk-body">
+        DWP staff can access free counselling and support through
+        <a class="govuk-link" href="https://intranet.dwp.gov.uk/section/working-dwp/human-resources/wellbeing/employee-assistance-programme">PAM Assist</a>.
+      </p>
+      <h2 class="govuk-heading-m">What you can do</h2>
+      <p class="govuk-body">
+        If you need to give us more information, or change anything in your report, please, contact your line manager.
+      </p>
+      {{ govukWarningText({
+        text: "Make a note of your reference number before you close this tab, or print or save this page.",
+        iconFallbackText: "Warning"
+      }) }}
+      <p class="govuk-body">
+        To help us improve this service, we’d like to know
+        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=6fbxllcQF0GsKIDN_ob4w-oDsqWqlSlJvQe6JubotYpUNFoxRVFURzIyVU1QOVo3QTA5WFdWSjJIVS4u" class="govuk-link" rel="noreferrer noopener" target="_blank">what you think of it.</a><br>
+        It will only take 2 minutes to give us feedback.
+      </p>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </div>
+</div>
 
 {% endblock %}
 
