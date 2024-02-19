@@ -17,13 +17,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
     <h1 class="govuk-heading-xl">
-      Check your answers before sending your application
+      Check your answers
     </h1>
     {{ govukSummaryList({
       rows: [
         {
           key: {
-            text: "When"
+            text: "Date of incident"
           },
           value: {
             text: data['incident-date']
@@ -40,7 +40,7 @@
         },
         {
           key: {
-            text: "Time"
+            text: "Time of incident"
           },
           value: {
             text: data['time']
@@ -59,10 +59,10 @@
     }) }}
 
     <h2 class="govuk-heading-m">
-      Now send your application
+      Now send this to your manager
     </h2>
 
-    <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+    <p>By sending this Six Point Plan report to your manager, you are confirming that, to the best of your knowledge, the information you have included is correct.</p>
 
     <form action="/confirmation" method="post" novalidate>
       <!-- TBD -->
