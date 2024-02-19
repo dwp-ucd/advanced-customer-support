@@ -33,37 +33,38 @@
       }
     </style>
 
-    {{ govukDateInput({
-      id: "incident-time",
-      namePrefix: "incident-time",
-      hint: {
-        text: "Use the 24-hour clock. For example, 15:30"
-      },
-      fieldset: {
-        legend: {
-          text: "What time did the Six Point Plan happen?",
-          classes: "govuk-fieldset__legend--l",
-          isPageHeading: true
-        }
-      },
-      items: [
-        {
-          classes: "govuk-input--width-2",
-          name: "Hours",
-          value: data['incident-date-day']
+    <form class="form" action="/six-point-plan/check-answers" method="post">
+      {{ govukDateInput({
+        id: "incident-time",
+        namePrefix: "incident-time",
+        hint: {
+          text: "Use the 24-hour clock. For example, 15:30"
         },
-        {
-          classes: "govuk-input--width-2",
-          name: "Minutes",
-            value: data['incident-date-month']
-        }
-      ]
-    }) }}
+        fieldset: {
+          legend: {
+            text: "What time did the Six Point Plan happen?",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        items: [
+          {
+            classes: "govuk-input--width-2",
+            name: "Hours",
+            value: data['incident-date-day']
+          },
+          {
+            classes: "govuk-input--width-2",
+            name: "Minutes",
+              value: data['incident-date-month']
+          }
+        ]
+      }) }}
 
-    {{ govukButton({
-      text: "Continue",
-      href: "/six-point-plan/check-answers"
-    }) }}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
   </div>
 </div>
 
