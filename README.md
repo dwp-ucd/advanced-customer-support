@@ -1,7 +1,5 @@
 # Advanced Customer Support prototype
 
-
-
 This is the prototype for Advanced Customer Support
 
 ## Header
