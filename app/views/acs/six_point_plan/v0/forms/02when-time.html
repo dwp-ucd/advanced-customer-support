@@ -2,14 +2,18 @@
 {% extends "layouts/header.html" %}
 
 {% block pageTitle %}
+
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
 {% endblock %}
 
 {% block beforeContent %}
+
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
+
 {% endblock %}
 
 {% block content %}
@@ -37,9 +41,6 @@
       {{ govukDateInput({
         id: "incident-time",
         namePrefix: "incident-time",
-        hint: {
-          text: "Use the 24-hour clock. For example, 15:30"
-        },
         fieldset: {
           legend: {
             text: "What time did the incident happen?",
@@ -47,16 +48,21 @@
             isPageHeading: true
           }
         },
+        hint: {
+          text: "Use the 24-hour clock. For example, 15:30"
+        },
         items: [
           {
             classes: "govuk-input--width-2",
             name: "Hours",
-            value: data['incident-date-day']
+            value: data['incident-date-day'],
+            classes: "govuk-input--width-2"
           },
           {
             classes: "govuk-input--width-2",
             name: "Minutes",
-              value: data['incident-date-month']
+            value: data['incident-date-month'],
+            classes: "govuk-input--width-2"
           }
         ]
       }) }}

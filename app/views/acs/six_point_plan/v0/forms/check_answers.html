@@ -2,14 +2,18 @@
 {% extends "layouts/header.html" %}
 
 {% block pageTitle %}
+
   Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+
 {% endblock %}
 
 {% block beforeContent %}
+
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
+
 {% endblock %}
 
 {% block content %}
@@ -20,59 +24,67 @@
       Check your answers
     </h1>
 
-    {{ govukSummaryList({
-      rows: [
-        {
-          key: {
-            text: "Date of incident"
+    {% set dateHTML %}
+    
+      {{ data['incident-date-day'] }}
+      {{ data['incident-date-readable-month'] }}
+      {{ data['incident-date-year']}}
+        at {{ data['incident-time-Hours'] }}:{{ data['incident-time-Minutes'] }}
+        
+    {% endset %}
+
+    <div class="govuk-!-padding-bottom-9">
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Date of incident"
+            },
+            value: {
+              text: data['incident-date']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
           },
-          value: {
-            text: data['incident-date']
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "Question 1"
-              }
-            ]
+          {
+            key: {
+              text: "Time of incident"
+            },
+            value: {
+              text: data['time']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
           }
-        },
-        {
-          key: {
-            text: "Time of incident"
-          },
-          value: {
-            text: data['time']
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "Question 2"
-              }
-            ]
-          }
-        }
-      ]
-    }) }}
-
-    <h2 class="govuk-heading-m">
-      Now send this to your manager
-    </h2>
-
-    <p>By sending this Six Point Plan report to your manager, you are confirming that, to the best of your knowledge, the information you have included is correct.</p>
-
-    <form action="/confirmation" method="post" novalidate>
-      <!-- TBD -->
-    </form>
+        ]
+      }) }}
   
-    {{ govukButton({
-      text: "Accept and send",
-      href: "/acs/six_point_plan/v0/forms/confirmation"
-    }) }}
+      <h2 class="govuk-heading-m">
+        Now send this to your manager
+      </h2>
+  
+      <p>By sending this Six Point Plan report to your manager, you are confirming that, to the best of your knowledge, the information you have included is correct.</p>
+  
+      <form action="/acs/six_point_plan/v0/forms/confirmation" method="post" novalidate>
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+      </form>
+    </div>
   </div>
 </div>
 

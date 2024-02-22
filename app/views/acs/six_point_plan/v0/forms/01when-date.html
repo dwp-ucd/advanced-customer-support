@@ -2,10 +2,13 @@
 {% extends "layouts/header.html" %}
 
 {% block pageTitle %}
+
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
 {% endblock %}
 
 {% block beforeContent %}
+
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -17,11 +20,11 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds"> 
-      <form class="form" action="/acs/six_point_plan/v0/forms/02time" method="post">
+      <form class="form" action="/acs/six_point_plan/v0/forms/02when-time" method="post">
         {% set dateHtml %}
           {{ govukDateInput({
             id: "incident-date",
-            namePrefix: "incident-date",
+            name: "incident-date",
             hint: {
               text: "For example, 30 11 2021"
             },
