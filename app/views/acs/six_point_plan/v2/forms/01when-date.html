@@ -20,7 +20,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds"> 
-      <form class="form" action="/acs/six_point_plan/v0/forms/02when-time" method="post">
+      <form class="form" action="/acs/six_point_plan/v1/forms/02when-time" method="post">
         {% set dateHtml %}
           {{ govukDateInput({
             id: "incident-date",
@@ -78,7 +78,8 @@
           text: "Continue"
         }) }}
       </form>
+
+      {% include "../_notes/01when-date__notes.njk" %}
     </div>
   </div>
-
 {% endblock %}

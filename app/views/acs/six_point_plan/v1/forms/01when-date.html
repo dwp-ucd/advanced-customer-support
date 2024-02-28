@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/header.html" %}
+
+{% block pageTitle %}
+
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> 
+      <form class="form" action="/acs/six_point_plan/v1/forms/02when-time" method="post">
+        {{ govukDateInput({
+          id: "incident-date",
+          name: "incident-date",
+          hint: {
+            text: "For example, 30 11 2021"
+          },
+          items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year"
+            }
+          ],
+          fieldset: {
+            legend: {
+              text: "When did the incident happen?",
+              classes: "govuk-fieldset__legend--l",
+              isPageHeading: true
+            }
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+      {% include "../_notes/01when-date__notes.njk" %}
+    </div>
+  </div>
+{% endblock %}
