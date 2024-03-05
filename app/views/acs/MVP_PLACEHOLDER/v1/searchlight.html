@@ -12,91 +12,139 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-l">
-        Personal details
-      </h1>
+      <div class="advanced-customer-support">
+        <h1 class="govuk-heading-l">
+          Advanced Customer Support
+        </h1>
 
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Advanced Customer Support"
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Adjustments"
+              },
+              value: {
+                : ""
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Record support need",
+                    visuallyHiddenText: "advanced customer support"
+                  }
+                ]
+              }
             },
-            value: {
-              text: ""
+            {
+              key: {
+                text: "Six Point Plan"
+              },
+              value: {
+                text: ""
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Record Six Point Plan",
+                    visuallyHiddenText: "advanced customer support"
+                  }
+                ]
+              }
             },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Record support need",
-                  visuallyHiddenText: "advanced customer support"
-                }
-              ]
+            {
+              key: {
+                text: "Keep Customer Interactions Safe"
+              },
+              value: {
+                text: ""
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Make report",
+                    visuallyHiddenText: "advanced customer support"
+                  }
+                ]
+              }
             }
-          },
-          {
-            key: {
-              html: '<p class="govuk-body govuk-!-font-weight-regular">Current name</p>'
-            },
-            value: {
-              html: '<p class="govuk-body govuk-!-font-weight-bold">MR AARON DOE</p><p class="govuk-hint">Name type 1</p>'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              html: "<p>Date of birth</p>"
-            },
-            value: {
-              html: '<p class="govuk-body govuk-!-font-weight-bold">4 June 1972 (age 51)</p><p class="govuk-hint">Verified to level 2</p>'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "date of birth"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              html: '<p class="govuk-body govuk-!-font-weight-regular">National Insurance number</p>'
-            },
-            value: {
-              html: '<p class="govuk-body govuk-!-font-weight-bold">07700 900457</p><p class="govuk-body">Verified</p>'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "national insurance number"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              html: '<p class="govuk-body govuk-!-font-weight-regular">Nationality</p>'
-            },
-            value: {
-              html: '<p class="govuk-body govuk-!-font-weight-bold">British</p><p class="govuk-body">Source - DWP</p>'
-            }
-          }
-        ]
-      }) }}
+          ]
+        }) }}
+      </div>
 
+      <div class="personal-details">
+        <h1 class="govuk-heading-l">
+          Personal details
+        </h1>
+  
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                html: '<p class="govuk-body govuk-!-font-weight-regular">Current name</p>'
+              },
+              value: {
+                html: '<p class="govuk-body govuk-!-font-weight-bold">MR AARON DOE</p><p class="govuk-hint">Name type 1</p>'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                html: "<p>Date of birth</p>"
+              },
+              value: {
+                html: '<p class="govuk-body govuk-!-font-weight-bold">4 June 1972 (age 51)</p><p class="govuk-hint">Verified to level 2</p>'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                html: '<p class="govuk-body govuk-!-font-weight-regular">National Insurance number</p>'
+              },
+              value: {
+                html: '<p class="govuk-body govuk-!-font-weight-bold">07700 900457</p><p class="govuk-body">Verified</p>'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "national insurance number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                html: '<p class="govuk-body govuk-!-font-weight-regular">Nationality</p>'
+              },
+              value: {
+                html: '<p class="govuk-body govuk-!-font-weight-bold">British</p><p class="govuk-body">Source - DWP</p>'
+              }
+            }
+          ]
+        }) }}
+      </div>
+
+      {% include "./_notes/searchlight__notes.njk" %}
     </div>
   </div>
 
