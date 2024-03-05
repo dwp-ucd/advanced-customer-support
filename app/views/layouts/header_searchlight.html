@@ -4,37 +4,39 @@
 {% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
 
 {% block header %}
+  <div class="govuk-grid-row">
+    <!-- Blank header with no service name for the start page -->
+    {{ dwpHeader({
+      name: "Searchlight",
+      serviceHref: "/",
+      container:true
+    }) }}
 
-  <!-- Blank header with no service name for the start page -->
-  {{ dwpHeader({
-    name: "Searchlight",
-    serviceHref: "/",
-    container:true
-  }) }}
-
-  {{ dwpKeyDetailsBar({
-    primaryIdentifier: {
-    text: 'Name:',
-    value: 'Aaron Doe'
-    },
-    secondaryIdentifier: {
-    text: 'National Insurance Number:',
-    value: 'QQ 12 34 56 X'
-    },
-    additionalData: [
-    {
-    value: "4 June 1972",
-    text: "Date of birth:"
-    },
-    {
-    value: "07777 900 900",
-    text: "Mobile number:"
-    },
-    {
-    value: "English speaker",
-    text: "Language:"
-    }
-    ]
-  }) }} 
+    {{ dwpKeyDetailsBar({
+      primaryIdentifier: {
+        text: 'Name:',
+        value: 'Aaron Doe'
+      },
+      secondaryIdentifier: {
+        text: 'National Insurance Number:',
+        value: 'QQ 12 34 56 X'
+      },
+      additionalData: [
+        {
+          value: "4 June 1972",
+          text: "Date of birth:"
+        },
+        {
+          value: "07777 900 900",
+          text: "Mobile number:"
+        },
+        {
+          value: "English speaker",
+          text: "Language:"
+        }
+      ]
+    }) }} 
+    
+  </div>
 
 {% endblock %}
