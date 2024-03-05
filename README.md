@@ -14,7 +14,14 @@ The bulk of our code is in the `views` directory. There, you'll find the `acs` d
 
 ### Notes
 
-Notes are used document our design changes and version history. Every version of every app has its own notes directory. Within that directory, you will find that every page of the app has it's own notes file. That way, we can add the correct notes to page. 
+Notes are used document our design changes and version history. Every version of every app has its own notes directory. Within that directory, you will find that every page of the app has it's own notes file. That way, we can add the correct notes to page.
+
+To add notes to each file use this code
+```
+{% include "../_notes/<notes file name>.njk" %}
+```
+This should sit inside the content block and inside of a <div>
+Pending: making this code conditional so that it only shows up when we are not testing with users
 
 ### Version
 
