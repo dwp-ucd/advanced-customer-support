@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% extends "layouts/header-searchlight.html" %}
+{% extends "layouts/header_searchlight.html" %}
 
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
@@ -28,7 +28,7 @@
             actions: {
               items: [
                 {
-                  href: "/six-point-plan/01when",
+                  href: "/acs/six_point_plan/v1/forms/01when-date",
                   text: "Record Six Point Plan",
                   visuallyHiddenText: "advanced customer support"
                 }
@@ -57,7 +57,7 @@
               html: "<p>Date of birth</p>"
             },
             value: {
-              html: '<p class="govuk-body govuk-!-font-weight-bold">4 June 1972 (age 50)</p><p class="govuk-hint">Verified to level 2</p>'
+              html: '<p class="govuk-body govuk-!-font-weight-bold">4 June 1972 (age 51)</p><p class="govuk-hint">Verified to level 2</p>'
             },
             actions: {
               items: [
@@ -96,7 +96,8 @@
           }
         ]
       }) }}
-
+      
+      {% include "./_notes/searchlight__notes.njk" %}
     </div>
   </div>
 

@@ -1,55 +1,44 @@
-# GOV.UK Prototype Kit
+# Advanced Customer Support prototype
 
+This is the prototype for Advanced Customer Support
 
+## Contact
 
-Go to the [GOV.UK Prototype Kit site](https://prototype-kit.service.gov.uk/docs) to get the latest documentation.
+- Allison Palum, Interaction Designer - allison.palum@engineering.digital.dwp.gov.uk
+- Alison Lewishill, Interaction Designer - alison.lewishill@engineering.digital.dwp.gov.uk
+- Philip Wilson, Senior Product Manager - philip.wilson1@dwp.gov.uk
 
-## About the Prototype Kit
+## File structure
 
-The Prototype Kit provides a simple way to make interactive prototypes that look like pages on GOV.UK. These prototypes can be used to show ideas to people you work with, and to do user research.
+The bulk of our code is in the `views` directory. There, you'll find the `acs` directory where all of our "apps" exist. An app can be described a few ways, but it is essentially one complete journey. ie, the six point plan
 
-Read the [project principles](https://prototype-kit.service.gov.uk/docs/principles).
+### Notes
 
-## Make sure prototypes are password-protected
+Notes are used document our design changes and version history. Every version of every app has its own notes directory. Within that directory, you will find that every page of the app has it's own notes file. That way, we can add the correct notes to page.
 
-If you publish your prototypes online, they **must** be [protected by a password](https://prototype-kit.service.gov.uk/docs/publishing). This is to prevent members of the public finding prototypes and thinking they are real services.
+To add notes to each file use this code
+```
+{% include "../_notes/<notes file name>.njk" %}
+```
+This should sit inside the content block and inside of a <div>
+Pending: making this code conditional so that it only shows up when we are not testing with users
 
-You must protect user privacy at all times, even when using prototypes. Prototypes made with the kit look like GOV.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately.
+### Version
 
-## Installation instructions
+Create a new version when designs need updating. ie, using different components, changing list options, adding a new question
 
-- [Installation guide for new users (non technical)](https://prototype-kit.service.gov.uk/docs/install/getting-started)
-- [Installation guide for developers (technical)](https://prototype-kit.service.gov.uk/docs/install/getting-started-advanced)
+#### How to create a new version
 
-## Node version requirements
+- Copy the most recent version directory and paste it into the app
+- Update the name of the directory, ie, change `v2` to `v3`
+- Go through each file within your new version and update any reference to the old version to the new version, mostly in `href`'s
+- Go the the `_versions` directory in the app and add your new version to the versions list and the pagination items list in for each page
 
-We always recommend you use the [current long term support (LTS) version of Node.js](https://github.com/nodejs/release#release-schedule).
+This is a pain in the butt, but it must be done!!!
 
-The Prototype Kit always supports at least the current and previous LTS releases.
+Body text
 
-## Support
+This is a [link](<link>).
 
-The GOV.UK Prototype Kit is maintained by the Government Digital Service. If you’ve got a question or need support you can:
-
-* email [govuk-design-system-support@digital.cabinet-office.gov.uk](mailto:govuk-design-system-support@digital.cabinet-office.gov.uk)
-* [get in touch on Slack](https://ukgovernmentdigital.slack.com/app_redirect?channel=prototype-kit)
-* [view known issues on GitHub](https://github.com/alphagov/govuk-prototype-kit/issues)
-
-## Contributing
-
-If you’ve got an idea or suggestion, you can:
-
-* [get in touch on the developer Slack channel](https://ukgovernmentdigital.slack.com/app_redirect?channel=prototype-kit-dev)
-* [create a GitHub issue](https://github.com/alphagov/govuk-prototype-kit/issues)
-
-The govuk-prototype-kit repository is public and we welcome contributions from anyone.
-
-Contributors to alphagov repositories are expected to follow the [Contributor Covenant Code of Conduct](https://github.com/alphagov/.github/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct). Contributors working within government are also expected to follow the [Civil Service code](https://www.gov.uk/government/publications/civil-service-code/the-civil-service-code).
-
-We are unable to monitor activity on this repository outside of our office hours (10am to 4pm, UK time). To get a faster response at other times, you can [report abuse or spam to GitHub](https://docs.github.com/en/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam).
-
-### Security
-
-GDS is an advocate of responsible vulnerability disclosure. If you’ve found a vulnerability, we would like to know so we can fix it.
-
-For full details on how to tell us about vulnerabilities, [see our security policy](https://github.com/alphagov/govuk-prototype-kit/security/policy).
+- Bullet point
+- Bullet point
