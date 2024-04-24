@@ -11,87 +11,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <div class="advanced-customer-support">
-        <h1 class="govuk-heading-l">
-          Advanced Customer Support
-        </h1>
-
-        <div class="searchlight-section-container">
-          {{ govukSummaryList({
-            rows: [
-              {
-                key: {
-                  text: "Adjustments"
-                },
-                value: {
-                  text: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "/acs/mvp/v1/support-needs",
-                      text: "View",
-                      visuallyHiddenText: "advanced customer support"
-                    },
-                    {
-                      href: "#",
-                      text: "Record",
-                      visuallyHiddenText: "advanced customer support"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Six Point Plan"
-                },
-                value: {
-                  text: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "View",
-                      visuallyHiddenText: "advanced customer support"
-                    },
-                    {
-                      href: "#",
-                      text: "Record",
-                      visuallyHiddenText: "advanced customer support"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Keep Customer Interactions Safe"
-                },
-                value: {
-                  text: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Make report",
-                      visuallyHiddenText: "advanced customer support"
-                    }
-                  ]
-                }
-              }
-            ]
-          }) }}
-        </div>
-      </div>
-      <br>
-      <br>
-      <br>
       <div class="personal-details">
         <h1 class="govuk-heading-l">
           Personal details
         </h1>
-  
+    
         <div class="searchlight-section-container">
           {{ govukSummaryList({
             rows: [
@@ -152,6 +76,74 @@
                 },
                 value: {
                   html: '<p class="govuk-body govuk-!-font-weight-bold">British</p><p class="govuk-body">Source - DWP</p>'
+                }
+              }
+            ]
+          }) }}
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      <div class="advanced-customer-support">
+        <h1 class="govuk-heading-l">
+          Adjustmetns
+        </h1>
+
+        <div class="searchlight-section-container">
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">When we see them face-to-face</p>'
+                },
+                value: {
+                  html: data['adjustments'] | join("<br>") if data['adjustments']|length else '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "/acs/in_person_adjustments/v1/forms/change/01customer-consent",
+                      text: "Change",
+                      visuallyHiddenText: "advanced customer support"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">When we write to them</p>'
+                },
+                value: {
+                  html: '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "advanced customer support"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">When we speak to them on the phone</p>'
+                },
+                value: {
+                  html: '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "advanced customer support"
+                    }
+                  ]
                 }
               }
             ]

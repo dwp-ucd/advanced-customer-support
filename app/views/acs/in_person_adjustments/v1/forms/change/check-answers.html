@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/header.html" %}
+
+{% block pageTitle %}
+
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    {% set summaryListRows = [] %}
+    {% for i in range(0, data['adjustments'].length) -%}
+      {% set summaryListRows = (summaryListRows.push(
+        {
+          key: {
+            text: data['adjustments'][i]
+          },
+          value: {
+            text: "Added"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Question 1"
+              }
+            ]
+          }
+        }
+      ), summaryListRows) %}
+    {%- endfor %}
+
+    <div class="govuk-!-padding-bottom-9">
+      {{ govukSummaryList({
+        rows: summaryListRows
+      }) }}
+  
+      <h2 class="govuk-heading-m">
+        Change the customer’s record
+      </h2>
+  
+      <p>By changing the customer record, you are confirming that that customer is aware of what you're doing and that, to the best of your knowledge, the details you are providing are correct and necessary.</p>
+  
+      <form action="/acs/in_person_adjustments/v1/searchlight" method="post" novalidate>
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

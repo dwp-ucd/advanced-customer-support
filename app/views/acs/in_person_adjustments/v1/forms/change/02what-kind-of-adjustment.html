@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/header.html" %}
+
+{% block pageTitle %}
+
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/acs/in_person_adjustments/v1/forms/change/check-answers" method="post">
+        {{ govukCheckboxes({
+            name: "adjustments",
+            fieldset: {
+              legend: {
+                text: "What kind of adjustment does the customer need?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              html: '<p class="govuk-hint">Currently you can only specify adjustments that apply when a customer visits a DWP site. We will add other adjustments later; for example, adjustments for telephone calls or letters.<br><br>Select all that apply.</p>'
+            },
+            items: [
+              {
+                value: "Wide doorway",
+                text: "Wide doorway",
+                checked: true if data['adjustments']|length and data['adjustments'].includes("Wide doorway") else false
+              },
+              {
+                value: "Ramp access",
+                text: "Ramp access",
+                checked: true if data['adjustments']|length and data['adjustments'].includes("Ramp access") else false
+              },
+              {
+                value: "Lift",
+                text: "Lift",
+                checked: true if data['adjustments']|length and data['adjustments'].includes("Lift") else false
+              },
+              {
+                value: "Induction loop",
+                text: "Induction loop",
+                checked: true if data['adjustments']|length and data['adjustments'].includes("Induction loop") else false
+              },
+              {
+                value: "Sign language",
+                text: "Sign language",
+                hint: {
+                    text: "You can select the type of sign language on a later screen"
+                },
+                checked: true if data['adjustments']|length and data['adjustments'].includes("Sign language") else false
+              }
+            ]
+          }) }}
+
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+    </form>
+    
+    {% include "../../_notes/forms/delete/01areyousure__notes.njk" %}
+  </div>
+</div>
+
+{% endblock %}
