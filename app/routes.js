@@ -7,3 +7,11 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
+router.post('/acs/in_person_adjustments/v1/forms/01customer-consent', function(request, response) {
+    var customerConsent = request.session.data['customer-consent']
+    if (customerConsent == "yes"){
+        response.redirect("/acs/in_person_adjustments/v1/forms/02what-kind-of-adjustment")
+    } else {
+        response.redirect("/acs/in_person_adjustments/v1/forms/03no-customer-consent")
+    }
+})

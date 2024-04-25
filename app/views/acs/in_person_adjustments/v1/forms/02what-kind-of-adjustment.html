@@ -20,7 +20,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/acs/in_person_adjustments/v1/forms/change/check-answers" method="post">
+    <form class="form" action="/acs/in_person_adjustments/v1/forms/check-answers" method="post">
         {{ govukCheckboxes({
             name: "adjustments",
             fieldset: {
@@ -67,7 +67,7 @@
         }) }}
     </form>
     
-    {% include "../../_notes/forms/delete/01areyousure__notes.njk" %}
+    {% include "../_notes/forms/02what-kind-of-adjustment__notes.njk" %}
   </div>
 </div>
 

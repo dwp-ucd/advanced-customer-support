@@ -1,0 +1,19 @@
+{% set versions = [ 
+  "../../v1/forms/02what-kind-of-adjustment"
+] %}
+
+
+
+{{ govukPagination({
+
+  items: [
+    {
+      number: 1,
+      href: versions[0]
+    }
+  ]
+}) }}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/versions_1-0.js"></script>
+{% endblock %}

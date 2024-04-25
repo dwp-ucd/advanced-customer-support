@@ -1,0 +1,35 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/header.html" %}
+
+{% block pageTitle %}
+
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">You can't add adjustments to the customer records without their consent</h1>
+    <p>Some text about why or what to do next</p>
+
+    {{ govukButton({
+        text: "Go back to Searchlight",
+        href: "/acs/in_person_adjustments/v1/searchlight"
+    }) }}
+
+    {% include "../_notes/forms/03no-customer-consent__notes.njk" %}
+  </div>
+</div>
+
+{% endblock %}

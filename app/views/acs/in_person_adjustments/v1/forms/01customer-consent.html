@@ -20,10 +20,10 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/acs/in_person_adjustments/v1/forms/change/02what-kind-of-adjustment" method="post">
+    <form class="form" action="/acs/in_person_adjustments/v1/forms/01customer-consent" method="post">
         {{ govukRadios({
             classes: "govuk-radios--inline",
-            name: "areyousure",
+            name: "customer-consent",
             fieldset: {
                 legend: {
                 text: "Does the customer (or their representative) know you're changing their record?",
@@ -48,7 +48,7 @@
         }) }}
     </form>
     
-    {% include "../../_notes/forms/delete/01areyousure__notes.njk" %}
+    {% include "../_notes/forms/01customer-consent__notes.njk" %}
   </div>
 </div>
 
