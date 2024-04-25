@@ -23,7 +23,6 @@
     <h1 class="govuk-heading-xl">
       Check your answers
     </h1>
-
     {% set summaryListRows = [] %}
     {% for i in range(0, data['adjustments'].length) -%}
       {% set summaryListRows = (summaryListRows.push(
@@ -48,19 +47,72 @@
     {%- endfor %}
 
     <div class="govuk-!-padding-bottom-9">
+      <h2 class="govuk-heading-m">Adjustments</h2>
       {{ govukSummaryList({
-        rows: summaryListRows
+        rows: [
+          {
+            key: {
+              text: 'When we see them face-to-face'
+            },
+            value: {
+              html: data['adjustments'] | join("<br>")
+            },
+            actions: {
+              items: [
+                {
+                  href: "/acs/in_person_adjustments/v1/forms/change/02what-kind-of-adjustment",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: 'When we write to them'
+            },
+            value: {
+              text: 'None'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: 'When we speak to them on the phone'
+            },
+            value: {
+              text: 'None'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          }
+        ]
       }) }}
   
       <h2 class="govuk-heading-m">
-        Change the customer’s record
+        Updating the customer’s record
       </h2>
   
-      <p>By changing the customer record, you are confirming that that customer is aware of what you're doing and that, to the best of your knowledge, the details you are providing are correct and necessary.</p>
+      <p>By updating the customer record, you are confirming that the details you are providing are correct and necessary.</p>
   
       <form action="/acs/in_person_adjustments/v1/searchlight" method="post" novalidate>
         {{ govukButton({
-          text: "Accept and send"
+          text: "Update and send"
         }) }}
       </form>
     </div>

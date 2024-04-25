@@ -93,6 +93,12 @@
         </h1>
 
         <div class="searchlight-section-container">
+          {% set inPersonAdjustments %}
+            {%- for item in data['adjustments'] -%}
+              <p class="govuk-body govuk-!-font-weight-bold">{{ item }}</p>
+            {%- endfor -%}
+          {%- endset %}
+
           {{ govukSummaryList({
             rows: [
               {
@@ -100,7 +106,7 @@
                   html: '<p class="govuk-body govuk-!-font-weight-regular">When we see them face-to-face</p>'
                 },
                 value: {
-                  html: data['adjustments'] | join("<br>") if data['adjustments']|length else '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
+                  html: inPersonAdjustments if data['adjustments']|length else '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
                 },
                 actions: {
                   items: [
