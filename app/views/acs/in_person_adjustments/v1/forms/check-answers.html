@@ -55,7 +55,7 @@
               text: 'When we see them face-to-face'
             },
             value: {
-              html: data['adjustments'] | join("<br>")
+              html: data['adjustments'] | join("<br>") if data['adjustments']|length else 'None'
             },
             actions: {
               items: [
