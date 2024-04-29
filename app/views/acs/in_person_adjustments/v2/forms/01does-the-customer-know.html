@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/header.html" %}
+
+{% block pageTitle %}
+
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/acs/in_person_adjustments/v1/forms/01does-the-customer-know" method="post">
+        {{ govukRadios({
+            classes: "govuk-radios--inline",
+            name: "customer-consent",
+            fieldset: {
+                legend: {
+                text: "Does the customer (or their representative) know you're changing their record?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+                }
+            },
+            items: [
+                {
+                  value: "Yes",
+                  text: "Yes"
+                },
+                {
+                  value: "No",
+                  text: "No"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+    </form>
+    
+    {% include "../_notes/forms/01does-the-customer-know__notes.njk" %}
+  </div>
+</div>
+
+{% endblock %}

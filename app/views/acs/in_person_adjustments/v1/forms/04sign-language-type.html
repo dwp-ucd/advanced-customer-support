@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/header.html" %}
+
+{% block pageTitle %}
+
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/acs/in_person_adjustments/v1/forms/check-answers" method="post">
+        {{ govukRadios({
+            classes: "govuk-radios--inline",
+            name: "type-of-sign-language",
+            fieldset: {
+                legend: {
+                text: "Does the customer (or their representative) know you're changing their record?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+                }
+            },
+            items: [
+                {
+                  value: "British Sign Language (BSL)",
+                  text: "British Sign Language (BSL)",
+                  checked: true if data['type-of-sign-language']|length and data['type-of-sign-language'].includes("British Sign Language (BSL)") else false
+                },
+                {
+                  value: "British Sign Language interpreter",
+                  text: "British Sign Language interpreter",
+                  checked: true if data['type-of-sign-language']|length and data['type-of-sign-language'].includes("British Sign Language interpreter") else false
+                },
+                {
+                    value: "Sign Language - Hearing",
+                    text: "Sign Language - Hearing",
+                    checked: true if data['type-of-sign-language']|length and data['type-of-sign-language'].includes("Sign Language - Hearing") else false
+                },
+                {
+                    divider: "or"
+                },
+                {
+                    value: "None",
+                    text: "None",
+                    checked: true if data['type-of-sign-language']|length and data['type-of-sign-language'].includes("None") else false
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+    </form>
+    
+    {% include "../_notes/forms/01does-the-customer-know__notes.njk" %}
+  </div>
+</div>
+
+{% endblock %}

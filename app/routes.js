@@ -7,9 +7,18 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
+// VERSION 1
+router.post('/acs/in_person_adjustments/v1/forms/02what-kind-of-adjustment', function(request, response) {
+    var adjustmetnsSelected = request.session.data['adjustments']
+    if (adjustmetnsSelected.includes('Sign language')){
+        response.redirect("/acs/in_person_adjustments/v1/forms/04sign-language-type")
+    } else {
+        response.redirect("/acs/in_person_adjustments/v1/forms/check-answers")
+    }
+})
+
 router.post('/acs/in_person_adjustments/v1/forms/01does-the-customer-know', function(request, response) {
     var customerConsent = request.session.data['customer-consent']
-    console.log(customerConsent)
     if (customerConsent == "Yes"){
         response.redirect("/acs/in_person_adjustments/v1/forms/02what-kind-of-adjustment")
     } else {
