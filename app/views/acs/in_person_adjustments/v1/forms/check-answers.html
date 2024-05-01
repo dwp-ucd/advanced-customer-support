@@ -33,28 +33,6 @@
     <h1 class="govuk-heading-xl">
       Check your answers
     </h1>
-    {% set summaryListRows = [] %}
-    {% for i in range(0, data['adjustments'].length) -%}
-      {% set summaryListRows = (summaryListRows.push(
-        {
-          key: {
-            text: data['adjustments'][i]
-          },
-          value: {
-            text: "Added"
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "Question 1"
-              }
-            ]
-          }
-        }
-      ), summaryListRows) %}
-    {%- endfor %}
 
     <div class="govuk-!-padding-bottom-9">
       <h2 class="govuk-heading-m">Adjustments</h2>
@@ -126,6 +104,8 @@
         }) }}
       </form>
     </div>
+
+    {% include "../_notes/forms/check-answers__notes.njk" %}
   </div>
 </div>
 

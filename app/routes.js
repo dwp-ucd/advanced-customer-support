@@ -25,3 +25,13 @@ router.post('/acs/in_person_adjustments/v1/forms/01does-the-customer-know', func
         response.redirect("/acs/in_person_adjustments/v1/forms/03customer-does-not-know")
     }
 })
+
+// VERSION 2
+router.post('/acs/in_person_adjustments/v2/forms/01does-the-customer-know', function(request, response) {
+    var customerConsent = request.session.data['customer-consent']
+    if (customerConsent == "Yes"){
+        response.redirect("/acs/in_person_adjustments/v2/forms/02what-kind-of-adjustment")
+    } else {
+        response.redirect("/acs/in_person_adjustments/v2/forms/03customer-does-not-know")
+    }
+})
