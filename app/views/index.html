@@ -46,6 +46,51 @@
         </li>
       </ul>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form class="form" action="index" method="post">
+      {{ govukRadios({
+        idPrefix: "displaymode",
+        name: "displaymode",
+        fieldset: {
+          legend: {
+            html: "Do you want to show design notes?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "show",
+            text: "Yes",
+            hint: {
+              text: "For designing and documenting"
+            },
+            checked: checked("displaymode", "show")
+          },
+          {
+            value: "hide",
+            text: "No",
+            hint: {
+              text: "For testing and stakeholder presentations"
+            },
+            checked: checked("displaymode", "hide")
+          }
+        ],
+        hint: {
+          html: currentMode
+        }
+      }) }}
+      
+      {{ govukButton({
+        text: "Apply now"
+      }) }}
+  </form>
+
   </div>
 </div>
 

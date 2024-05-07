@@ -157,7 +157,9 @@
         </div>
       </div>
 
-      {% include "./_notes/searchlight__notes.njk" %}
+      {% if (checked("displaymode", "show") == "checked") %}
+          {% include "./_notes/searchlight__notes.njk" %}
+      {% endif %}
     </div>
   </div>
 
