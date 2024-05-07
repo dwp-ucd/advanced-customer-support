@@ -10,7 +10,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 // VERSION 1
 router.post('/acs/in_person_adjustments/v1/forms/02what-kind-of-adjustment', function(request, response) {
     var adjustmetnsSelected = request.session.data['adjustments']
-    if (adjustmetnsSelected.includes('Sign language')){
+    if (adjustmetnsSelected && adjustmetnsSelected.includes('Sign language')){
         response.redirect("/acs/in_person_adjustments/v1/forms/04sign-language-type")
     } else {
         response.redirect("/acs/in_person_adjustments/v1/forms/check-answers")
