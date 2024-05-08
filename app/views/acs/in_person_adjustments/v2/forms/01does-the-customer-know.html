@@ -23,28 +23,23 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Before you start
+    </h1>
     <form class="form" action="/acs/in_person_adjustments/v2/forms/01does-the-customer-know" method="post">
         {{ govukRadios({
             classes: "govuk-radios",
             name: "customer-consent",
             fieldset: {
-                legend: {
-                text: "Before you start",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-                }
+              legend: {
+                text: "Does the customer (or their representative) know you're changing their record?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
             },
-
             hint: {
-            html: '<p class="govuk-hint">Before you change anything on the customer's record, check that the customer is aware of what you're doing.</p>'
+              text: "Before you change the customers record, check that they are aware of what you're doing"
             },
-            <br><br>
-
-            <h2 class="govuk-heading-m">
-              Does the customer (or their representative) know you're changing their record?
-            </h2>
-
-
             items: [
                 {
                   value: "Yes",
