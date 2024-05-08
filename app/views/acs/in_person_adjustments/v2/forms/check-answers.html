@@ -117,7 +117,9 @@
       </form>
     </div>
 
-    {% include "../_notes/forms/check-answers__notes.njk" %}
+    {% if (checked("displaymode", "show") == "checked") %}
+      {% include "../_notes/forms/check-answers__notes.njk" %}
+    {% endif %}
   </div>
 </div>
 

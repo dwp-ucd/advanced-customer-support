@@ -28,7 +28,9 @@
         href: "/acs/in_person_adjustments/v1/searchlight"
     }) }}
 
-    {% include "../_notes/forms/03customer-does-not-know__notes.njk" %}
+    {% if (checked("displaymode", "show") == "checked") %}
+      {% include "../_notes/forms/03customer-does-not-know__notes.njk" %}
+    {% endif %}
   </div>
 </div>
 

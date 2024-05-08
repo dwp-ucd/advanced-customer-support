@@ -69,8 +69,10 @@
             text: "Continue"
         }) }}
     </form>
-    
-    {% include "../_notes/forms/02what-kind-of-adjustment__notes.njk" %}
+
+    {% if (checked("displaymode", "show") == "checked") %}
+      {% include "../_notes/forms/02what-kind-of-adjustment__notes.njk" %}
+    {% endif %}
   </div>
 </div>
 

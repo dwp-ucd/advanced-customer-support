@@ -48,7 +48,10 @@
         }) }}
     </form>
     
-    {% include "../_notes/forms/01does-the-customer-know__notes.njk" %}
+
+    {% if (checked("displaymode", "show") == "checked") %}
+      {% include "../_notes/forms/01does-the-customer-know__notes.njk" %}
+    {% endif %}
   </div>
 </div>
 
