@@ -4,7 +4,7 @@
 {% block pageTitle %}
 
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
-  
+
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,19 +18,33 @@
 
 {% block content %}
 
+
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="/acs/in_person_adjustments/v2/forms/01does-the-customer-know" method="post">
         {{ govukRadios({
-            classes: "govuk-radios--inline",
+            classes: "govuk-radios",
             name: "customer-consent",
             fieldset: {
                 legend: {
-                text: "Does the customer (or their representative) know you're changing their record?",
+                text: "Before you start",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
                 }
             },
+
+            hint: {
+            html: '<p class="govuk-hint">Before you change anything on the customer's record, check that the customer is aware of what you're doing.</p>'
+            },
+            <br><br>
+
+            <h2 class="govuk-heading-m">
+              Does the customer (or their representative) know you're changing their record?
+            </h2>
+
+
             items: [
                 {
                   value: "Yes",
@@ -47,7 +61,7 @@
             text: "Continue"
         }) }}
     </form>
-    
+
 
     {% if (checked("displaymode", "show") == "checked") %}
       {% include "../_notes/forms/01does-the-customer-know__notes.njk" %}
