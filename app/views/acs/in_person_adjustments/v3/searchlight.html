@@ -71,6 +71,112 @@
                 }
               },
 
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Disability status</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">Disabled</p>'
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "View maintenance",
+                        visuallyHiddenText: "name"
+                      }
+                    ]
+                  }
+                },
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">National insurance number</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">QQ12 34 56 X</p>'
+                  }
+                  
+                },
+
+
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Account created</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">12th April 2022</p>'
+                  }
+                },
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Customer record level</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">Unrestricted Access</p>'
+                  }
+                },
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Identity at risk</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">Yes</p><p class="govuk-body">Since 19 Oct 2023</p>'
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "View history",
+                        visuallyHiddenText: "name"
+                      }
+                    ]
+                  }
+                },
+
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Asset freeze</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">Yes</p><p class="govuk-body">Since 06 Dec 2019</p>'
+                  }   
+                },
+
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">National identity fraud unit</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">Yes</p>'
+                  }
+                },
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Civil Status</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">Married/Civil Partner</p>'
+                  }
+                },
+
+
+
+
+                
                 
               {
                 key: {
@@ -112,7 +218,7 @@
             rows: [
               {
                 key: {
-                  html: '<p class="govuk-body govuk-!-font-weight-regular">When we see them face-to-face</p>'
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">When they access a building</p>'
                 },
                 value: {
                   html: inPersonAdjustments if data['adjustments']|length else '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
@@ -120,7 +226,7 @@
                 actions: {
                   items: [
                     {
-                      href: "/acs/in_person_adjustments/v2/forms/01does-the-customer-know",
+                      href: "/acs/in_person_adjustments/v3/forms/01does-the-customer-know",
                       text: "Change",
                       visuallyHiddenText: "advanced customer support"
                     }
@@ -129,7 +235,7 @@
               },
               {
                 key: {
-                  html: '<p class="govuk-body govuk-!-font-weight-regular">When we write to them</p>'
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">When we send them something to read</p>'
                 },
                 value: {
                   html: '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
@@ -146,7 +252,7 @@
               },
               {
                 key: {
-                  html: '<p class="govuk-body govuk-!-font-weight-regular">When we speak to them on the phone</p>'
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">When we speak to them <br>(on the phone or in person)</p>'
                 },
                 value: {
                   html: '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
