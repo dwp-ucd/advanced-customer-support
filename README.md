@@ -72,11 +72,27 @@ TL;DR
 - Run `git commit -m "some message"` replacing "some message" with a blurb about the changes made
 - Run `git push origin branch_name` replacinqg branch_name with the name of the branch you're on
 
-#### THIS IS A CHANGE 
+#### Reverting changes
 
-- HELLO!
-- EVEN MORE CHANGES!
-- CHANGES ONCE AGAIN!
+- If you want to revert back to a particular commit, run `git log`
+- You will see a list of commits that look like this
+```
+commit 67bcfc66afd780ae2587e0a8d2415b2678ce7383
+Author: Allison Palum <allison.palum@engineering.digital.dwp.gov.uk>
+Date:   Thu May 16 11:34:39 2024 +0100
+
+    made some changes
+```
+- Copy the big, long id next to the word commit for the commit that you would like to revert back to
+- Run `git reset --hard commit_id`, replacing commit_id with that big, long id that you've copied
+- Then, run `git pull origin branch_name`, replacing branch_name with the name of the branch you are on
+
+TL;DR
+
+- Run `git log`
+- Copy the id of the commit you want to revert back to
+- Run `git reset --hard commit_id`
+- Run `git pull origin branch_name`
 
 Body text
 
