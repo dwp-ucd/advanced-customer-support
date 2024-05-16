@@ -94,6 +94,14 @@ TL;DR
 - Run `git reset --hard commit_id`
 - Run `git pull origin branch_name`
 
+#### Merging your branch into main
+
+- Go to github and create a pull request
+- Add the appropriate reviewers
+- Once approved, merge the branch into `main` on github
+- Go back to your terminal and run `git pull origin main` on the `main` branch
+
+
 Body text
 
 This is a [link](<link>).
