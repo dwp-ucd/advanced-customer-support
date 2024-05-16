@@ -110,6 +110,11 @@ TL;DR
 - Once approved, merge the branch into `main` on github
 - Go back to your terminal and run `git pull origin main` on the `main` branch
 
+### Routes
+
+Routes are used to direct the application to the correct page based on what a user selects. For example, if they select "Yes" take them here, if they select "No", take them there
+
+
 
 Body text
 
