@@ -36,6 +36,43 @@ Create a new version when designs need updating. ie, using different components,
 
 This is a pain in the butt, but it must be done!!!
 
+### Git
+
+Some useful git commands to get you where you need to go
+
+#### Making a new branch
+
+- Got to the `main` branch by typing `git checkout main`, maybe you're already there, I don't know! 
+- Run `git pull origin main` in order to get the most recent version of `main`
+- Think about the mame of your new branch. It should describe what changes are being made on the branch.
+- For example, if you are making a branch to update copy, perhaps name it `update_copy`. It is good practice to use that format with `_`'s. ie, `this_is_my_new_branch`
+- Anyways, once you decide you new branch name, you can run `git checkout -b update_copy`, or using whatever your new branch name is
+- Running this comman will create your new branch and take you to that branch. If you run `git branch`, you'll see that you're on your new branch
+
+TL;DR
+
+- Run `git checkout main`
+- Run `git pull origin main`
+- Run `git checkout -b put_branch_name_here`
+- Run `git branch`
+
+#### Making changes
+
+- When you're on you branch and have made changes, save them (of course)!
+- Once saved, you can run `git add .` (that period indicates that you are adding all changed files, you can add individual files, but don't worry about this. It's rare you'd need to do this)
+- Basically what `git add .` does is takes your changes from your working directory and adds them to the staging area. Like, in baseball when a hitter leaves the dugout and is "on deck"
+- You can then run `git commit -m "a message explaining what changes were made"`, which adds your changes to the project history with a lil message of what you did
+- Finally, push your changes to the branch by running `git push origin branch_name` replacing branch_name with the name of the branch you are on. This publishes your changes to the branch. 
+
+TL;DR
+
+- Save changes!
+- Run `git add .`
+- Run `git commit -m "some message"` replacing "some message" with a blurb about the changes made
+- Run `git push origin branch_name` replacing branch_name with the name of the branch you're on
+
+#### 
+
 Body text
 
 This is a [link](<link>).
