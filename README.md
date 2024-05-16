@@ -52,7 +52,8 @@ Some useful git commands to get you where you need to go
 
 TL;DR
 
-- Run `git checkout main`
+- Run `git branch`
+- If you're not on `main`, run `git checkout main`
 - Run `git pull origin main`
 - Run `git checkout -b put_branch_name_here`
 - Run `git branch`
