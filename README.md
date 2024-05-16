@@ -42,7 +42,8 @@ Some useful git commands to get you where you need to go
 
 #### Making a new branch
 
-- Got to the `main` branch by typing `git checkout main`, maybe you're already there, I don't know! 
+- See what branch you're in by running `git branch`
+- If you're not in the `main` branch, go to the `main` branch by typing `git checkout main` 
 - Run `git pull origin main` in order to get the most recent version of `main`
 - Think about the mame of your new branch. It should describe what changes are being made on the branch.
 - For example, if you are making a branch to update copy, perhaps name it `update_copy`. It is good practice to use that format with `_`'s. ie, `this_is_my_new_branch`
