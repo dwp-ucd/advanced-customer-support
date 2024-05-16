@@ -70,11 +70,12 @@ TL;DR
 - Save changes!
 - Run `git add .`
 - Run `git commit -m "some message"` replacing "some message" with a blurb about the changes made
-- Run `git push origin branch_name` replacing branch_name with the name of the branch you're on
+- Run `git push origin branch_name` replacinqg branch_name with the name of the branch you're on
 
 #### THIS IS A CHANGE 
 
 - HELLO!
+- EVEN MORE CHANGES!
 
 Body text
 
