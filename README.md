@@ -31,7 +31,16 @@ Create a new version when designs need updating. ie, using different components,
 - Copy the most recent version directory and paste it into the app
 - Update the name of the directory, ie, change `v2` to `v3`
 - Go through each file within your new version and update any reference to the old version to the new version, mostly in `href`'s
-- Go the the `_versions` directory in the app and add your new version to the versions list and the pagination items list in for each page
+- Go the the `_versions` directory in the app and add your new version to the versions list and the pagination items list in for each page 
+
+This list in the versions file should have each version of the appropriate file. There should be the same number of items in govukPagination.
+```
+{% set versions = [ 
+  "../v1/searchlight",
+  "../v2/searchlight",
+  "../v3/searchlight"
+] %}
+```
 
 This is a pain in the butt, but it must be done!!!
 
