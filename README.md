@@ -114,6 +114,24 @@ TL;DR
 
 Routes are used to direct the application to the correct page based on what a user selects. For example, if they select "Yes" take them here, if they select "No", take them there
 
+If you need to direct a user based on some conditional (if this do that, otherwise do this), make sure the `action` in the html form element is the same page you're on. So, if you're on the `01does-the-customer-know.html` page and you want to create a route based on how the user answers, you would want the `form` to look like...
+```
+<form class="form" action="/acs/in_person_adjustments/v2/forms/01does-the-customer-know" method="post">
+```
+From there we can create a route that looks like this...
+```
+router.post('/acs/in_person_adjustments/v2/forms/01does-the-customer-know', function(request, response) {
+    var customerConsent = request.session.data['customer-consent']
+    if (customerConsent == "Yes"){
+        response.redirect("/acs/in_person_adjustments/v2/forms/02what-kind-of-adjustment")
+    } else {
+        response.redirect("/acs/in_person_adjustments/v2/forms/03customer-does-not-know")
+    }
+})
+```
+This means that when you click continue on the does-the-customer-know page, the route will be triggered (because the page is in the action) and the route above will run.
+
+You will need to crate a new route when you create new versions as well because the url changes with new versions.
 
 
 Body text
