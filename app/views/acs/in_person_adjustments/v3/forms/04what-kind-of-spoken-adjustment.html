@@ -22,7 +22,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="/acs/in_person_adjustments/v3/forms/check-answers" method="post">
         {{ govukCheckboxes({
-            name: "adjustments",
+            name: "spoken-adjustments",
             fieldset: {
               legend: {
                 text: "What kind of adjustment does the customer need?",
@@ -35,34 +35,14 @@
             },
             items: [
               {
-                value: "Wide doorway",
-                text: "Wide doorway",
-                checked: true if data['adjustments']|length and data['adjustments'].includes("Wide doorway") else false
-              },
-              {
-                value: "Ramp access",
-                text: "Ramp access",
-                checked: true if data['adjustments']|length and data['adjustments'].includes("Ramp access") else false
-              },
-              {
-                value: "Lift",
-                text: "Lift",
-                checked: true if data['adjustments']|length and data['adjustments'].includes("Lift") else false
-              },
-              {
-                value: "Induction loop",
-                text: "Induction loop",
-                checked: true if data['adjustments']|length and data['adjustments'].includes("Induction loop") else false
-              },
-              {
                 value: "Sign language",
                 text: "Sign language",
-                checked: true if data['adjustments']|length and data['adjustments'].includes("Sign language") else false
+                checked: true if data['spoken-adjustments']|length and data['spoken-adjustments'].includes("Sign language") else false
               },
               {
-                value: "Sign language",
-                text: "Sign language -  hearing",
-                checked: true if data['adjustments']|length and data['adjustments'].includes("Sign language") else false
+                value: "Sign language - hearing",
+                text: "Sign language - hearing",
+                checked: true if data['spoken-adjustments']|length and data['spoken-adjustments'].includes("Sign language - hearing") else false
               }
             ]
           }) }}
@@ -73,7 +53,7 @@
     </form>
     
     {% if (checked("displaymode", "show") == "checked") %}
-      {% include "../_notes/forms/02what-kind-of-adjustment__notes.njk" %}
+      {% include "../_notes/forms/03what-kind-of-adjustment__notes.njk" %}
     {% endif %}
   </div>
 </div>
