@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/header.html" %}
+
+{% block pageTitle %}
+
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Before you start
+    </h1>
+    <form class="form" action="/acs/in_person_adjustments/v3/forms/02does-the-customer-know-spoken" method="post">
+        {{ govukRadios({
+            classes: "govuk-radios",
+            name: "customer-consent",
+            fieldset: {
+              legend: {
+                text: "Does the customer (or their representative) know you're changing their record?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "Before you change the customer's record, check they are aware of what you're doing."
+            },
+            items: [
+                {
+                  value: "Yes",
+                  text: "Yes"
+                },
+                {
+                  value: "No",
+                  text: "No"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+    </form>
+
+
+    {% if (checked("displaymode", "show") == "checked") %}
+      {% include "../_notes/forms/02does-the-customer-know-spoken__notes.njk" %}
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

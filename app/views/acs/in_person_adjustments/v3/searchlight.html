@@ -166,6 +166,44 @@
 
                 {
                   key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Preferred Language</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">English</p>'
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "View maintenance",
+                        visuallyHiddenText: "name"
+                      }
+                    ]
+                  }
+                },
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Spoken language</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">English</p>'
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "View history",
+                        visuallyHiddenText: "name"
+                      }
+                    ]
+                  }
+                },
+
+
+
+                {
+                  key: {
                     html: '<p class="govuk-body govuk-!-font-weight-regular">Civil Status</p>'
                   },
                   value: {
@@ -213,6 +251,13 @@
               <p class="govuk-body govuk-!-font-weight-bold">{{ item }}</p>
             {%- endfor -%}
           {%- endset %}
+          {% set spokenAdjustments %}
+            {%- for item in data['spoken-adjustments'] -%}
+              <p class="govuk-body govuk-!-font-weight-bold">{{ item }}</p>
+            {%- endfor -%}
+          {%- endset %}
+
+      
 
           {{ govukSummaryList({
             rows: [
@@ -255,12 +300,12 @@
                   html: '<p class="govuk-body govuk-!-font-weight-regular">When we speak to them <br>(on the phone or in person)</p>'
                 },
                 value: {
-                  html: '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
+                  html: spokenAdjustments if data['spoken-adjustments']|length else '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
                 },
                 actions: {
                   items: [
                     {
-                      href: "#",
+                      href: "/acs/in_person_adjustments/v3/forms/02does-the-customer-know-spoken",
                       text: "Change",
                       visuallyHiddenText: "advanced customer support"
                     }
