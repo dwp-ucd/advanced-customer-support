@@ -1,0 +1,29 @@
+{% set versions = [ 
+  "../../v1/forms/03customer-does-not-know",
+  "../../v2/forms/03customer-does-not-know",
+  "../../v3/forms/05customer-does-not-know"
+] %}
+
+
+
+{{ govukPagination({
+
+  items: [
+    {
+      number: 1,
+      href: versions[0]
+    },
+    {
+      number: 2,
+      href: versions[1]
+    },
+    {
+      number: 3,
+      href: versions[2]
+    }
+  ]
+}) }}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/versions_1-0.js"></script>
+{% endblock %}

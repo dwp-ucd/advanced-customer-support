@@ -1,0 +1,22 @@
+{% set versions = [ 
+  "../../v1/forms/02does-the-customer-know-spoken",
+  "../../v2/forms/02does-the-customer-know-spoken",
+  "../../v3/forms/02does-the-customer-know-spoken"
+] %}
+
+
+
+{{ govukPagination({
+
+  items: [
+    
+    {
+      number: 3,
+      href: versions[2]
+    }
+  ]
+}) }}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/versions_1-0.js"></script>
+{% endblock %}

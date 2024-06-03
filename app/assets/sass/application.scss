@@ -4,11 +4,31 @@
 // 
 
 // Add extra styles here
+
+
+
+
 .govuk-template__body {
     background-color: #F3F2F1;
+  
 }
-            
+ 
 .searchlight-section-container {
     background-color: #FFFFFF;
     padding: 45px 24px;
 }
+.topnav {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .topnav a {
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  } 

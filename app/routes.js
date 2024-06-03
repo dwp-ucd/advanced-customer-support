@@ -46,7 +46,6 @@ router.post('/acs/in_person_adjustments/v3/forms/01does-the-customer-know', func
     }
 })
 
-// VERSION 3
 router.post('/acs/in_person_adjustments/v3/forms/02does-the-customer-know-spoken', function(request, response) {
     var customerConsent = request.session.data['customer-consent']
     if (customerConsent == "Yes"){
@@ -55,6 +54,36 @@ router.post('/acs/in_person_adjustments/v3/forms/02does-the-customer-know-spoken
         response.redirect("/acs/in_person_adjustments/v3/forms/05customer-does-not-know")
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 router.use((req, res, next) => {
     const log = {
