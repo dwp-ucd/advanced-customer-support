@@ -60,7 +60,7 @@
             actions: {
               items: [
                 {
-                  href: "/acs/in_person_adjustments/v3/forms/02what-kind-of-adjustment",
+                  href: "/acs/in_person_adjustments/v3/forms/03what-kind-of-adjustment",
                   text: "Change",
                   visuallyHiddenText: "When they access a building"
                 }
@@ -89,12 +89,12 @@
               text: 'When we speak to them (on the phone or in person)'
             },
             value: {
-              text: 'None'
+              html: data['spoken-adjustments'] | join("<br>") if data['spoken-adjustments']|length else 'None'
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/acs/in_person_adjustments/v3/forms/04what-kind-of-spoken-adjustment",
                   text: "Change",
                   visuallyHiddenText: "When we speak to them (on the phone or in person)"
                 }
