@@ -4,7 +4,7 @@
 {% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
 
 {% block header %}
-  <div class="govuk-grid-row">
+  <div class="govuk-grid-row header">
     <!-- Blank header with no service name for the start page -->
     {{ dwpHeader({
       name: "Searchlight",
@@ -36,7 +36,18 @@
         }
       ]
     }) }} 
-    
+
+    <div class="row topnav-row">
+    <div class="govuk-width-container ">
+    <div class="topnav">
+      <ul>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="#personalDetails">Personal details</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="#adjustments">Adjustments</a></li>
+      </ul>
+    </div>
+  </div></div>
   </div>
+
+
 
 {% endblock %}
