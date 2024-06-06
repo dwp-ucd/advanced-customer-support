@@ -3,14 +3,8 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
 
-// Add extra styles here
-
-
-
-
 .govuk-template__body {
     background-color: #F3F2F1;
-  
 }
  
 .searchlight-section-container {
@@ -58,5 +52,9 @@
             }   
         }
     }
+}
+
+h1 {
+    scroll-margin-top: 270px;
 }
 
