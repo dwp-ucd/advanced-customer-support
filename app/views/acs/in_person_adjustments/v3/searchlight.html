@@ -15,7 +15,7 @@
         <h1 class="govuk-heading-l" id="personalDetails">
           Personal details
         </h1>
-    
+
         <div class="searchlight-section-container">
           {{ govukSummaryList({
             rows: [
@@ -97,7 +97,7 @@
                   value: {
                     html: '<p class="govuk-body govuk-!-font-weight-bold">QQ12 34 56 X</p>'
                   }
-                  
+
                 },
 
 
@@ -149,7 +149,7 @@
                   },
                   value: {
                     html: '<p class="govuk-body govuk-!-font-weight-bold">Yes</p><p class="govuk-body">Since 06 Dec 2019</p>'
-                  }   
+                  }
                 },
 
 
@@ -214,8 +214,8 @@
 
 
 
-                
-                
+
+
               {
                 key: {
                   html: '<p class="govuk-body govuk-!-font-weight-regular">Nationality</p>'
@@ -227,11 +227,11 @@
             ]
 
 
-            
-          
 
-          
-            
+
+
+
+
           }) }}
         </div>
       </div>
@@ -242,7 +242,7 @@
 
       <div class="advanced-customer-support">
         <h1 class="govuk-heading-l" id="adjustments">
-          Adjustments
+          Reasonable adjustments
         </h1>
 
         <div class="searchlight-section-container">
@@ -257,13 +257,13 @@
             {%- endfor -%}
           {%- endset %}
 
-      
+
 
           {{ govukSummaryList({
             rows: [
               {
                 key: {
-                  html: '<p class="govuk-body govuk-!-font-weight-regular">When they access a building</p>'
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">When they visit a DWP building</p>'
                 },
                 value: {
                   html: inPersonAdjustments if data['adjustments']|length else '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
@@ -273,7 +273,7 @@
                     {
                       href: "/acs/in_person_adjustments/v3/forms/01does-the-customer-know",
                       text: "Change",
-                      visuallyHiddenText: "When they access a building"
+                      visuallyHiddenText: "When they visit a DWP building"
                     }
                   ]
                 }

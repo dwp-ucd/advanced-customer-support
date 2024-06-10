@@ -4,7 +4,7 @@
 {% block pageTitle %}
 
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
-  
+
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,14 +25,12 @@
             name: "spoken-adjustments",
             fieldset: {
               legend: {
-                text: "What kind of adjustment does the customer need?",
+                text: "What kind of adjustment does the customer need when we speak to them?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
             },
-            hint: {
-              html: '<p class="govuk-hint">Currently you can only specify adjustments that apply when a customer visits a DWP site. We will add other adjustments later; for example, adjustments for telephone calls or letters.<br><br>Select all that apply.</p>'
-            },
+
             items: [
               {
                 value: "Sign language",
@@ -51,7 +49,7 @@
             text: "Continue"
         }) }}
     </form>
-    
+
     {% if (checked("displaymode", "show") == "checked") %}
       {% include "../_notes/forms/04what-kind-of-spoken-adjustment__notes.njk" %}
     {% endif %}

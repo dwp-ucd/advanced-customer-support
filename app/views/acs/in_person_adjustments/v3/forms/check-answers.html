@@ -47,12 +47,12 @@
     {%- endfor %}
 
     <div class="govuk-!-padding-bottom-9">
-      <h2 class="govuk-heading-m">Adjustments</h2>
+      <h2 class="govuk-heading-m">Reasonable adjustments</h2>
       {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: 'When they access a building'
+              text: 'When they visit a DWP building'
             },
             value: {
               html: data['adjustments'] | join("<br>") if data['adjustments']|length else 'None'
@@ -62,7 +62,7 @@
                 {
                   href: "/acs/in_person_adjustments/v3/forms/03what-kind-of-adjustment",
                   text: "Change",
-                  visuallyHiddenText: "When they access a building"
+                  visuallyHiddenText: "When they visit a DWP building"
                 }
               ]
             }
