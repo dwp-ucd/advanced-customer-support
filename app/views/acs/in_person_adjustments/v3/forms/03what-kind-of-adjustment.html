@@ -4,7 +4,7 @@
 {% block pageTitle %}
 
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
-  
+
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,13 +25,10 @@
             name: "adjustments",
             fieldset: {
               legend: {
-                text: "What kind of adjustment does the customer need?",
+                text: "What kind of adjustment does the customer need when they visit a DWP building?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
-            },
-            hint: {
-              html: '<p class="govuk-hint">Currently you can only specify adjustments that apply when a customer visits a DWP site. We will add other adjustments later; for example, adjustments for telephone calls or letters.<br><br>Select all that apply.</p>'
             },
             items: [
               {
@@ -54,7 +51,7 @@
                 text: "Induction loop",
                 checked: true if data['adjustments']|length and data['adjustments'].includes("Induction loop") else false
               }
-              
+
             ]
           }) }}
 
@@ -62,7 +59,7 @@
             text: "Continue"
         }) }}
     </form>
-    
+
     {% if (checked("displaymode", "show") == "checked") %}
       {% include "../_notes/forms/03what-kind-of-adjustment__notes.njk" %}
     {% endif %}

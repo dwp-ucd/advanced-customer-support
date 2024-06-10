@@ -26,36 +26,18 @@
     <h1 class="govuk-heading-l">
       Before you start
     </h1>
-    <form class="form" action="/acs/in_person_adjustments/v3/forms/01does-the-customer-know" method="post">
-        {{ govukRadios({
-            classes: "govuk-radios",
-            name: "customer-consent",
-            fieldset: {
-              legend: {
-                text: "Does the customer (or their representative) know you're changing their record?",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            hint: {
-              text: "Before you change the customer's record, check they are aware of what you're doing."
-            },
-            items: [
-                {
-                  value: "Yes",
-                  text: "Yes"
-                },
-                {
-                  value: "No",
-                  text: "No"
-                }
-            ]
+
+<br>
+
+        <h2 class="govuk-heading-m">Does the customer (or their appointee) know that you're changing their record?</h2>
+        <p>You should not change a customer's record without telling them or their appointee.</p>
+<p>The exception to this is if telling a customer might distress them. For example, if a customer experiences mental ill-health and finds it hard to talk about this.</p>
+        {{ govukButton({
+            text: "Continue",
+            href: "/acs/in_person_adjustments/v3/forms/03what-kind-of-adjustment.html"
         }) }}
 
-        {{ govukButton({
-            text: "Continue"
-        }) }}
-    </form>
+
 
 
     {% if (checked("displaymode", "show") == "checked") %}
