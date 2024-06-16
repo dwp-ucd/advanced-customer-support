@@ -55,6 +55,25 @@ router.post('/acs/in_person_adjustments/v3/forms/02does-the-customer-know-spoken
     }
 })
 
+// VERSION 4
+router.post('/acs/in_person_adjustments/v4/forms/01does-the-customer-know', function(request, response) {
+    var customerConsent = request.session.data['customer-consent']
+    if (customerConsent == "Yes"){
+        response.redirect("/acs/in_person_adjustments/v4/forms/03what-kind-of-adjustment")
+    } else {
+        response.redirect("/acs/in_person_adjustments/v4/forms/05customer-does-not-know")
+    }
+})
+
+router.post('/acs/in_person_adjustments/v4/forms/02does-the-customer-know-spoken', function(request, response) {
+    var customerConsent = request.session.data['customer-consent']
+    if (customerConsent == "Yes"){
+        response.redirect("/acs/in_person_adjustments/v4/forms/04what-kind-of-spoken-adjustment")
+    } else {
+        response.redirect("/acs/in_person_adjustments/v4/forms/05customer-does-not-know")
+    }
+})
+
 
 
 

@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/header.html" %}
+
+{% block pageTitle %}
+
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">You should not change a customer’s record without their knowledge, or the knowledge of their representative.</h1>
+    <p>Before you continue, you should contact the customer and make them aware of what you’re changing.</p>
+
+    {{ govukButton({
+        text: "Back to Searchlight",
+        href: "/acs/in_person_adjustments/v3/searchlight"
+    }) }}
+
+    {% if (checked("displaymode", "show") == "checked") %}
+      {% include "../_notes/forms/05customer-does-not-know__notes.njk" %}
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
