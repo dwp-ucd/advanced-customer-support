@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/header.html" %}
+
+{% block pageTitle %}
+
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/acs/in_person_adjustments/v4/forms/check-answers" method="post">
+        {{ govukCheckboxes({
+            name: "spoken-adjustments",
+            fieldset: {
+              legend: {
+                text: "What kind of adjustment does the customer need when we speak to them?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "British Sign language",
+                text: "British Sign language",
+                checked: true if data['spoken-adjustments']|length and data['spoken-adjustments'].includes("British Sign language") else false
+              }
+            ]
+          }) }}
+
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+    </form>
+    
+    {% if (checked("displaymode", "show") == "checked") %}
+      {% include "../_notes/forms/04what-kind-of-spoken-adjustment__notes.njk" %}
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

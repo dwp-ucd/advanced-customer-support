@@ -1,0 +1,327 @@
+{% extends "layouts/header_searchlight.html" %}
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block pageTitle %}
+  Home page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="personal-details">
+        <h1 class="govuk-heading-l" id="personalDetails">
+          Personal details
+        </h1>
+    
+        <div class="searchlight-section-container">
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">Current name</p>'
+                },
+                value: {
+                  html: '<p class="govuk-body govuk-!-font-weight-bold">MR AARON DOE</p><p class="govuk-hint">Name type 1</p>'
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  html: "<p>Date of birth</p>"
+                },
+                value: {
+                  html: '<p class="govuk-body govuk-!-font-weight-bold">4 June 1972 (age 51)</p><p class="govuk-hint">Verified to level 2</p>'
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "date of birth"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">Phone number</p>'
+                },
+                value: {
+                  html: '<p class="govuk-body govuk-!-font-weight-bold">07700 900457</p><p class="govuk-body">Verified</p>'
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "phone number"
+                    }
+                  ]
+                }
+              },
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Disability status</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">Disabled</p>'
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "View maintenance",
+                        visuallyHiddenText: "Disability status"
+                      }
+                    ]
+                  }
+                },
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">National insurance number</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">QQ12 34 56 X</p>'
+                  }
+                  
+                },
+
+
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Account created</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">12th April 2022</p>'
+                  }
+                },
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Customer record level</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">Unrestricted Access</p>'
+                  }
+                },
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Identity at risk</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">Yes</p><p class="govuk-body">Since 19 Oct 2023</p>'
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "View history",
+                        visuallyHiddenText: "Identity at risk"
+                      }
+                    ]
+                  }
+                },
+
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Asset freeze</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">Yes</p><p class="govuk-body">Since 06 Dec 2019</p>'
+                  }   
+                },
+
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">National identity fraud unit</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">Yes</p>'
+                  }
+                },
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Preferred Language</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">English</p>'
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "View maintenance",
+                        visuallyHiddenText: "Preferred Language"
+                      }
+                    ]
+                  }
+                },
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Spoken language</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">English</p>'
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "View history",
+                        visuallyHiddenText: "Spoken language"
+                      }
+                    ]
+                  }
+                },
+
+
+
+                {
+                  key: {
+                    html: '<p class="govuk-body govuk-!-font-weight-regular">Civil Status</p>'
+                  },
+                  value: {
+                    html: '<p class="govuk-body govuk-!-font-weight-bold">Married/Civil Partner</p>'
+                  }
+                },
+
+
+
+
+                
+                
+              {
+                key: {
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">Nationality</p>'
+                },
+                value: {
+                  html: '<p class="govuk-body govuk-!-font-weight-bold">British</p><p class="govuk-body">Source - DWP</p>'
+                }
+              }
+            ]
+
+
+            
+          
+
+          
+            
+          }) }}
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      <div class="advanced-customer-support">
+        <h1 class="govuk-heading-l" id="adjustments">
+          Reasonable adjustments
+        </h1>
+
+        <div class="searchlight-section-container">
+          {% set inPersonAdjustments %}
+            {%- for item in data['adjustments'] -%}
+              <p class="govuk-body govuk-!-font-weight-bold">{{ item }}</p>
+            {%- endfor -%}
+          {%- endset %}
+          {% set spokenAdjustments %}
+            {%- for item in data['spoken-adjustments'] -%}
+              <p class="govuk-body govuk-!-font-weight-bold">{{ item }}</p>
+            {%- endfor -%}
+          {%- endset %}
+
+      
+
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">When they visit a DWP building</p>'
+                },
+                value: {
+                  html: inPersonAdjustments if data['adjustments']|length else '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "/acs/in_person_adjustments/v4/forms/01does-the-customer-know",
+                      text: "Change",
+                      visuallyHiddenText: "When they visit a DWP building"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">When we send them something to read</p>'
+                },
+                value: {
+                  html: '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "When we send them something to read"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">When we speak to them
+                    <br>(on a call or in person)</p>'
+                },
+                value: {
+                  html: spokenAdjustments if data['spoken-adjustments']|length else '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "/acs/in_person_adjustments/v4/forms/02does-the-customer-know-spoken",
+                      text: "Change",
+                      visuallyHiddenText: "When we speak to them (on a call or in person)"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+        </div>
+      </div>
+
+      {% if (checked("displaymode", "show") == "checked") %}
+          {% include "./_notes/searchlight__notes.njk" %}
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}

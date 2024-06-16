@@ -1,0 +1,126 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/header.html" %}
+
+{% block pageTitle %}
+
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+    {% set summaryListRows = [] %}
+    {% for i in range(0, data['adjustments'].length) -%}
+      {% set summaryListRows = (summaryListRows.push(
+        {
+          key: {
+            text: data['adjustments'][i]
+          },
+          value: {
+            text: "Added"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Question 1"
+              }
+            ]
+          }
+        }
+      ), summaryListRows) %}
+    {%- endfor %}
+
+    <div class="govuk-!-padding-bottom-9">
+      <h2 class="govuk-heading-m">Reasonable adjustments</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: 'When they visit a DWP building'
+            },
+            value: {
+              html: data['adjustments'] | join("<br>") if data['adjustments']|length else 'None'
+            },
+            actions: {
+              items: [
+                {
+                  href: "/acs/in_person_adjustments/v4/forms/03what-kind-of-adjustment",
+                  text: "Change",
+                  visuallyHiddenText: "When they visit a DWP building"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: 'When we send them something to read'
+            },
+            value: {
+              text: 'None'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "When we send them something to read"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: 'When we speak to them (on a call or in person)'
+            },
+            value: {
+              html: data['spoken-adjustments'] | join("<br>") if data['spoken-adjustments']|length else 'None'
+            },
+            actions: {
+              items: [
+                {
+                  href: "/acs/in_person_adjustments/v4/forms/04what-kind-of-spoken-adjustment",
+                  text: "Change",
+                  visuallyHiddenText: "When we speak to them (on a call or in person)"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Updating the customer’s record
+      </h2>
+
+      <p>By updating the customer's record, you are confirming that the details you are providing are correct and necessary.</p>
+
+      <form action="/acs/in_person_adjustments/v4/searchlight" method="post" novalidate>
+        {{ govukButton({
+          text: "Update and submit"
+        }) }}
+      </form>
+    </div>
+
+    {% if (checked("displaymode", "show") == "checked") %}
+      {% include "../_notes/forms/check-answers__notes.njk" %}
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
