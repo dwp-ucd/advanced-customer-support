@@ -315,8 +315,17 @@
               }
             ]
           }) }}
+
+  {{ govukDetails({
+    summaryText: "The customer needs help with communication",
+    text: "This adjustment has been added to the customer record
+    There isn't a clear definition of what this adjustment means 
+    If you would like to remove it from the customer record you should complete the CIS 500 form"
+  }) }}
         </div>
       </div>
+
+      
 
       {% if (checked("displaymode", "show") == "checked") %}
           {% include "./_notes/searchlight__notes.njk" %}

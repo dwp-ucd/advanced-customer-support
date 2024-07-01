@@ -32,21 +32,26 @@
             },
             
             items: [
-              {
-                value: "Wide doorway",
-                text: "Wide doorway",
-                checked: true if data['adjustments']|length and data['adjustments'].includes("Wide doorway") else false
-              },
-              {
-                value: "Step-free access, a ramp, lift or ground-floor appointment",
-                text: "Step-free access, a ramp, lift or ground-floor appointment",
-                checked: true if data['adjustments']|length and data['adjustments'].includes("Step-free access, a ramp, lift or ground-floor appointment") else false
-              },
-              {
-                value: "Induction loop",
-                text: "Induction loop",
-                checked: true if data['adjustments']|length and data['adjustments'].includes("Induction loop") else false
-              }
+            {
+              value: "Wide doorway",
+              text: "Wide doorway",
+              checked: true if data['adjustments']|length and data['adjustments'].includes("Wide doorway") else false
+            },
+            {
+              value: "Ramp access",
+              text: "Ramp access",
+              checked: true if data['adjustments']|length and data['adjustments'].includes("Ramp access") else false
+            },
+            {
+              value: "Lift",
+              text: "Lift",
+              checked: true if data['adjustments']|length and data['adjustments'].includes("Lift") else false
+            },
+            {
+              value: "Induction loop",
+              text: "Induction loop",
+              checked: true if data['adjustments']|length and data['adjustments'].includes("Induction loop") else false
+            }
               
             ]
           }) }}
