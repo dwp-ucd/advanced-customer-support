@@ -315,8 +315,16 @@
               }
             ]
           }) }}
+
+  {{ govukDetails({
+    summaryText: "The customer needs help with communication",
+    text: "DWP used to offer ‘Communications Support’ as a reasonable adjustment. 
+    This has previously been recorded on the customers profile."
+  }) }}
         </div>
       </div>
+
+      
 
       {% if (checked("displaymode", "show") == "checked") %}
           {% include "./_notes/searchlight__notes.njk" %}

@@ -31,12 +31,22 @@
               }
             },
             items: [
-              {
-                value: "British Sign language",
-                text: "British Sign language",
-                checked: true if data['spoken-adjustments']|length and data['spoken-adjustments'].includes("British Sign language") else false
-              }
+            {
+              value: "Sign language",
+              text: "Sign language",
+              checked: true if data['spoken-adjustments']|length and data['spoken-adjustments'].includes("Sign language") else false
+            },
+            {
+              value: "Sign language - hearing",
+              text: "Sign language - hearing",
+              checked: true if data['spoken-adjustments']|length and data['spoken-adjustments'].includes("Sign language - hearing") else false
+            }
             ]
+          }) }}
+
+          {{ govukDetails({
+            summaryText: "What is 'Sign language - hearing'?",
+            text: "Choose this option if the customer can hear or has partial hearing and prefers to express themselves using sign language."
           }) }}
 
         {{ govukButton({
