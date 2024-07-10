@@ -15,7 +15,7 @@
         <h1 class="govuk-heading-l" id="personalDetails">
           Personal details
         </h1>
-    
+
         <div class="searchlight-section-container">
           {{ govukSummaryList({
             rows: [
@@ -97,7 +97,7 @@
                   value: {
                     html: '<p class="govuk-body govuk-!-font-weight-bold">QQ12 34 56 X</p>'
                   }
-                  
+
                 },
 
 
@@ -149,7 +149,7 @@
                   },
                   value: {
                     html: '<p class="govuk-body govuk-!-font-weight-bold">Yes</p><p class="govuk-body">Since 06 Dec 2019</p>'
-                  }   
+                  }
                 },
 
 
@@ -214,8 +214,8 @@
 
 
 
-                
-                
+
+
               {
                 key: {
                   html: '<p class="govuk-body govuk-!-font-weight-regular">Nationality</p>'
@@ -227,11 +227,6 @@
             ]
 
 
-            
-          
-
-          
-            
           }) }}
         </div>
       </div>
@@ -257,7 +252,7 @@
             {%- endfor -%}
           {%- endset %}
 
-      
+
 
           {{ govukSummaryList({
             rows: [
@@ -271,7 +266,7 @@
                 actions: {
                   items: [
                     {
-                      href: "/acs/in_person_adjustments/v4/forms/01does-the-customer-know",
+                      href: "/acs/in_person_adjustments/v3/forms/01does-the-customer-know",
                       text: "Change",
                       visuallyHiddenText: "When they visit a DWP building"
                     }
@@ -297,8 +292,7 @@
               },
               {
                 key: {
-                  html: '<p class="govuk-body govuk-!-font-weight-regular">When we speak to them
-                    <br>(on a call or in person)</p>'
+                  html: '<p class="govuk-body govuk-!-font-weight-regular">When we speak to them <br>(on a call or in person)</p>'
                 },
                 value: {
                   html: spokenAdjustments if data['spoken-adjustments']|length else '<p class="govuk-body govuk-!-font-weight-bold">None</p>'
@@ -306,7 +300,7 @@
                 actions: {
                   items: [
                     {
-                      href: "/acs/in_person_adjustments/v4/forms/02does-the-customer-know-spoken",
+                      href: "/acs/in_person_adjustments/v3/forms/02does-the-customer-know-spoken",
                       text: "Change",
                       visuallyHiddenText: "When we speak to them (on a call or in person)"
                     }
@@ -316,20 +310,21 @@
             ]
           }) }}
 
-  {{ govukDetails({
-    summaryText: "The customer needs help with communication",
-    text: "DWP used to offer ‘Communications Support’ as a reasonable adjustment. 
-    This has previously been recorded on the customers profile."
-  }) }}
+          {{ govukDetails({
+            summaryText: "The customer needs help with communication",
+            text: "DWP used to offer ‘Communications Support’ as a reasonable adjustment. 
+            This has previously been recorded on the customers profile."
+          }) }}
+
         </div>
       </div>
-
-      
 
       {% if (checked("displaymode", "show") == "checked") %}
           {% include "./_notes/searchlight__notes.njk" %}
       {% endif %}
     </div>
   </div>
+
+
 
 {% endblock %}
